@@ -44,4 +44,8 @@ jobs:
       run: |
         cd omuse
         pip install -e .
+    - name: check installation
+      run: |
+        amusifier --get-amuse-configmk
+        pip list
         
