@@ -48,4 +48,8 @@ jobs:
       run: |
         amusifier --get-amuse-configmk
         pip list
+    - name: build iemic
+      run: |
+        cd omuse/src/omuse/community/iemic
+        make DOWNLOAD_CODES=1
         
