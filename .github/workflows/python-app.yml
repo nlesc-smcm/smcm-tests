@@ -48,6 +48,7 @@ jobs:
       run: |
         amusifier --get-amuse-configmk
         pip list
+        find / | grep hdf5
     - name: build iemic
       run: |
         cd omuse/src/omuse/community/iemic
