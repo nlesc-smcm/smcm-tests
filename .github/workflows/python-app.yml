@@ -26,17 +26,23 @@ jobs:
         sudo apt-get install libhdf5-openmpi-dev trilinos-dev
         pip install numpy scipy matplotlib docutils mpi4py pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - name: Checkout amuse repo
+      uses: actions/checkout@v2
+      with:
+        repository: amusecode/amuse
+        path: amuse        
     - name: Checkout omuse repo
       uses: actions/checkout@v2
       with:
         repository: omuse-geoscience/omuse
         path: omuse
         ref: smcm
+# install amuse manually to get latest
+    - name: Install amuse
+      run: |
+        cd amuse/packages/amuse-framework
+        pip install -e .
     - name: Install omuse
-      env:
-        CC: mpicc
-        CXX: mpiCC
-        FC: mpif90
       run: |
         cd omuse
         pip install -e .
