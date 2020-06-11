@@ -31,6 +31,7 @@ jobs:
       with:
         repository: omuse-geoscience/omuse
         path: omuse
+        ref: smcm
     - name: Install omuse
       env:
         CC: mpicc
