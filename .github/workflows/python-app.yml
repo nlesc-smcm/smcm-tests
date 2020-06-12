@@ -57,5 +57,5 @@ jobs:
     - name: test iemic
       run: |
         cd omuse/src/omuse/community/iemic
-        pytest test_iemic.py::iemictests -sv
+        pytest test_iemic.py::iemicTests -sv
         
