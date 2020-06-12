@@ -54,4 +54,8 @@ jobs:
       run: |
         cd omuse/src/omuse/community/iemic
         make DOWNLOAD_CODES=1
+    - name: test iemic
+      run: |
+        cd omuse/src/omuse/community/iemic
+        pytest test_iemic.py::iemictests -sv
         
